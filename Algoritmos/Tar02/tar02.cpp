@@ -4,7 +4,7 @@
 //
 //  Abigail Guadalupe Velazquez Sanchez A01566592 Grupo1
 //  Creado el 13/02/2021
-/*  Este programa solicita al usuario un tipo de dato string que contenga varios ceros y unos, y despliega en pantalla la longitud final del string si se eliminan n-veces los pares de unos y ceros ya sea 10 o 01
+/*  Este programa solicita al usuario un tipo de dato string que contenga varios ceros y unos y de tamaño 1-200,000, y despliega en pantalla la longitud final del string si se eliminan n-veces los pares de unos y ceros ya sea 10 o 01
 */
 
 #include <stdio.h>
@@ -36,9 +36,12 @@ void findLong(string str, int n){
 // Programa principal
 int main(){
     string str;
-    int n;
-    cout<<"Ingrese la longitud del string desde 1 a 200,000"<<endl;
-    cin>>n;
+    int n=0;
+    // Verifica que el string tenga una longitud inicial de 1 a 200,000
+    while (n<1 || n>200000) {
+        cout<<"Ingrese la longitud del string desde 1 a 200,000"<<endl;
+        cin>>n;
+    }
     cout<<"Ingrese su string :"<<endl;
     cin>>str;
     findLong(str,n);
