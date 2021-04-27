@@ -7,21 +7,21 @@ using namespace std;
 char check(string st){
     
     int cont = 1;
-    int mayor= 0;
+    int mayor= 0,suma = 0;
     long n = st.size();
-    int pos=0;
+   
     for (int i = 0; i<n; i++) {
         if (st[i]==st[i+1]&& i!=n-1 ) {
             cont++;
         }else{
             if (cont>mayor) {
-               pos = i;
+               suma+=cont;
                mayor = cont;
             }
             cont=1;
         }
     }
-    return st[pos];
+    return st[suma-1];
 }
 
 int main(){
@@ -29,4 +29,3 @@ int main(){
     cin >> st;
     cout << check(st)<<endl;
 }
-

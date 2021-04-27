@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 #include <iostream>
-#define MAX 16
+#define MAX 32
 using namespace std;
 
 // Funcion recursiva rellenaTriomino que recibe de parametro una matriz cuadrada, los limites de la matriz, la fila y columna con la casilla ocupada y un entero con que
@@ -61,17 +61,20 @@ int main(){
     int q = 0;
     cout<<"Ingresa la dimensión N de tu matriz cuadrada *recuerda que debe ser potencia de 2* :"<<endl;
     cin>> n;
-    cout<<"Ingresa la fila de la casilla ocupada: "<<endl;
+    cout<<"Ingresa la fila de la casilla ocupada: ";
     cin>>fila;
-    cout<<"Ingresa la columna de la casilla ocupada: "<<endl;
+    cout<<endl;
+    cout<<"Ingresa la columna de la casilla ocupada: ";
     cin>>columna;
+    cout<<endl;
     mat[fila][columna] = q;
     rellenaTriomino(mat, 0, n-1, 0, n-1, fila, columna, q);
 
     for (int i = 0; i<n; i++) {
         for (int j = 0; j<n; j++) {
-            cout<<mat[i][j]<<" ";
+            cout<<mat[i][j] << "\t" ;
         }
+        cout<<endl;
         cout<<endl;
     }
     return 0;
